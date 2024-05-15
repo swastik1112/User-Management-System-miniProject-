@@ -1,0 +1,76 @@
+﻿@model IEnumerable<miniProject.Models.Register>
+
+    <partial name="PartialView"></partial>
+
+@*@Html.ActionLink("Logout", "Logout")*@
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.UserNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LoginName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmailId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Mobile)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Password)
+            </th>
+            
+            <th>
+                City Name
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LoginName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmailId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mobile)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Password)
+            </td>
+            
+            <td>
+                @*@Html.DisplayFor(modelItem => item.CityNo)*@
+                @ViewData[item.LoginName]
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {  id=item.UserNo}) |
+                @Html.ActionLink("Details", "Details", new { id=item.UserNo  }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.UserNo })
+                
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

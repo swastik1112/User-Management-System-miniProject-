@@ -1,0 +1,42 @@
+﻿@model miniProject.ViewModels.LoginViewModel
+
+
+<h4>LoginViewModel</h4>
+<hr />
+<div class="row">
+    <link href="g:\mini project\mini project\miniproject\content\stylesheet.css" rel="stylesheet" />
+    <div class="col-md-4">
+        <form asp-action="Login">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="LoginName" class="control-label"></label>
+                <input asp-for="LoginName" class="form-control" />
+                <span asp-validation-for="LoginName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" asp-for="CheckBox" /> Remember Me
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Login" class="btn btn-primary" />
+            </div>
+            <p>
+                <a asp-action="Create" class="btn btn-primary">Register</a>
+            </p>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Login Page</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

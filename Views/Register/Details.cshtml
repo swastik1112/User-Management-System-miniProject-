@@ -1,0 +1,67 @@
+﻿@model miniProject.Models.Register
+@{
+    //both ViewData and TempData are available
+    string a =(string) ViewData["CityName"];
+    
+}
+
+<partial name="PartialView"></partial>
+<div>
+    <h4>Register</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.UserNo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.UserNo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LoginName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LoginName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FullName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FullName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Gender)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.EmailId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EmailId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Mobile)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Mobile)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Password)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Password)
+        </dd>
+        
+        <dt class = "col-sm-2">
+            City Name
+        </dt>
+        <dd class = "col-sm-10">
+            @a
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.UserNo }) |
+    <a asp-action="Index">Back to List</a>
+</div>
